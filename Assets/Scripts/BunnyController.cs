@@ -33,6 +33,10 @@ public class BunnyController : MonoBehaviour
 			_hopDirection = GenerateHopDirection();
 		}
 		_rigidbody.MovePosition(_rigidbody.position + _hopDirection * _speed);
+		transform.rotation = Quaternion.Slerp(
+			transform.rotation,
+			Quaternion.LookRotation(_hopDirection),
+			0.15f);
 		_timer += Time.deltaTime;
 	}
 
