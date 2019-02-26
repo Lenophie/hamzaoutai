@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		Vector3 diffVector = Input.GetAxis("Vertical") * _camera.transform.forward + Input.GetAxis("Horizontal") * _camera.transform.right;
+		diffVector.y = 0f;
 		_playerRigidbody.MovePosition(_playerRigidbody.position + diffVector * _speed);
 	}
 }
