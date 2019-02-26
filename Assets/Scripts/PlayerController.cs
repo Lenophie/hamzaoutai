@@ -4,13 +4,20 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private GameObject _player;
 	[SerializeField] private float _speed;
+	private Rigidbody _playerRigidbody;
+
+	void Start()
+	{
+		_playerRigidbody = _player.GetComponent<Rigidbody>();
+	}
 	
-	void Update()
+	void FixedUpdate()
 	{
 		Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-		_player.transform.position = new Vector3(_player.transform.position.x + inputVector.x * _speed,
-			_player.transform.position.y,
-			_player.transform.position.z + inputVector.y * _speed
-			);
+		_playerRigidbody.MovePosition(new Vector3(
+			_playerRigidbody.position.x + inputVector.x * _speed,
+			_playerRigidbody.position.y,
+			_playerRigidbody.position.z + inputVector.y * _speed
+		));
 	}
 }
