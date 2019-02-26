@@ -2172,7 +2172,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.5, z: 0.75}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1001 &968428632
 Prefab:
@@ -2655,8 +2655,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.2, z: 0.3}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Size: {x: 0.3, y: 0.2, z: 0.6}
+  m_Center: {x: 0, y: 0.1, z: 0.05}
 --- !u!136 &1171135911
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2667,9 +2667,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 0.8
+  m_Height: 1
   m_Direction: 2
-  m_Center: {x: 0, y: 0.35, z: 0.15}
+  m_Center: {x: 0, y: 0.35, z: 0.05}
 --- !u!1 &1222906897
 GameObject:
   m_ObjectHideFlags: 0
