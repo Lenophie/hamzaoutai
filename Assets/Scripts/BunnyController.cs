@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 
 public class BunnyController : MonoBehaviour
 {
+	private Animator _animator;
 	private Rigidbody _rigidbody;
 	private Boolean _isMoving;
 	[SerializeField] private float _minHopTime;
@@ -15,8 +16,11 @@ public class BunnyController : MonoBehaviour
 	
 	void Start()
 	{
+		_animator = GetComponent<Animator>();
 		_rigidbody = GetComponent<Rigidbody>();
 
+		_animator.Play(0, -1, Random.value);
+		
 		_hopTime = Random.Range(_minHopTime, _maxHopTime);
 		_timer = 0f;
 		_hopDirection = GenerateHopDirection();
