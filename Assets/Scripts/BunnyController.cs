@@ -8,7 +8,9 @@ public class BunnyController : MonoBehaviour
 	private Animator _animator;
 	private Rigidbody _rigidbody;
 	private Boolean _isMoving;
-	[SerializeField] private float _waitTime;
+	[SerializeField] private float _minHopTime;
+	[SerializeField] private float _maxHopTime;
+	private float _hopTime;
 	[SerializeField] private float _speed;
 	private float _timer;
 	private Vector3 _hopDirection;
@@ -17,14 +19,17 @@ public class BunnyController : MonoBehaviour
 	{
 		_animator = GetComponent<Animator>();
 		_rigidbody = GetComponent<Rigidbody>();
+
+		_hopTime = Random.Range(_minHopTime, _maxHopTime);
 		_timer = 0f;
 		_hopDirection = GenerateHopDirection();
 	}
 	
 	void Update()
 	{
-		if (_timer >= _waitTime) {
-			_timer -= _waitTime;
+		if (_timer >= _hopTime) {
+			_timer -= _hopTime;
+			_hopTime = Random.Range(_minHopTime, _maxHopTime);
 			_hopDirection = GenerateHopDirection();
 		}
 		_rigidbody.MovePosition(_rigidbody.position + _hopDirection * _speed);
