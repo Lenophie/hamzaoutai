@@ -4333,7 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1222906897}
-  _speed: 0.4
+  _speed: 0.1
   _camera: {fileID: 534669904}
 --- !u!1001 &2064964796
 Prefab:
