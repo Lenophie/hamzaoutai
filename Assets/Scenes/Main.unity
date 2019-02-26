@@ -2711,11 +2711,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1249573597
 Prefab:
@@ -4334,6 +4334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1222906897}
   _speed: 0.4
+  _camera: {fileID: 534669904}
 --- !u!1001 &2064964796
 Prefab:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private GameObject _player;
 	[SerializeField] private float _speed;
+	[SerializeField] private Camera _camera;
 	private Rigidbody _playerRigidbody;
 
 	void Start()
@@ -13,11 +14,7 @@ public class PlayerController : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-		_playerRigidbody.MovePosition(new Vector3(
-			_playerRigidbody.position.x + inputVector.x * _speed,
-			_playerRigidbody.position.y,
-			_playerRigidbody.position.z + inputVector.y * _speed
-		));
+		Vector3 diffVector = Input.GetAxis("Vertical") * _camera.transform.forward + Input.GetAxis("Horizontal") * _camera.transform.right;
+		_playerRigidbody.MovePosition(_playerRigidbody.position + diffVector * _speed);
 	}
 }
